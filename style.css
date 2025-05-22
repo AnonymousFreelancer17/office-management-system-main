@@ -1,147 +1,358 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .login-container, .dashboard-container {
-    background: white;
-    padding: 30px;
-    display: flex;
-    flex-direction: col;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    width: 400px;
-  }
-  
-  h1, h2 {
-    width: 100%;
-    text-align: center;
-    /* background: red; */
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  input[type="text"], input[type="password"] {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .logout-btn {
-    width: 100%;
-    background-color: #dc3545;
-  }
-  
-  .logout-btn:hover {
-    background-color: #b02a37;
-  }
-  
-  #taskList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  #taskList li {
-    background-color: #f8f9fa;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .task-text {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .task-actions button {
-    margin-left: 5px;
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-  /*  sidebar------------------------------------------------------------------------------ */
+* {
+  margin: 0px;
+  padding: 0px;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/*  login-form-styles ------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#login-form-container {
+  height: 40vh;
+  width: 50vw;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 5px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+#login-form-container form {
+  /* background-color: red; */
+  width: 90%;
+}
+
+/* dashboard styles ----------------------------------------------------------------------------------------------------------------------------------------------- */
+h1,
+h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.logout-btn:hover {
+  background-color: #b02a37;
+}
+
+/*  sidebar------------------------------------------------------------------------------ */
+
+.sidebar {
+  width: 200px;
+  background-color: #f0d9d9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.top-half,
+.bottom-half {
+  width: 100%;
+  height: 50vh;
+  /* background-color: red; */
+}
+
+.logoContainer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: green; */
+}
+
+/* styling the sidebar halfs --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.top-half {
+  /* background-color: blue; */
+}
+
+/* .bottom-half ------------------------------------------------------------------------------------------------------------------------------------ */
+
+.bottom-half {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 0px;
+  /* background-color: red; */
+}
+
+.bottom-half .logout-btn-container {
+  height: 100px;
+  width: 46%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  /* background-color: green; */
+}
+
+.logout-btn {
+  width: 100%;
+  border: 0px;
+  padding: 1rem;
+  background-color: #dc3545;
+  border-radius: 3px;
+  color: white;
+}
+
+.bottom-half .container {
+  height: 100px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blue; */
+}
+
+.bottom-half .profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-half .image-container {
+  /* background-color: gray; */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/*  sidebar-elemets--------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: #04aa6d;
+  border-radius: 50px 0px 0px 50px;
+  color: white;
+}
+
+/*  dashboard */
+#dashboard {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#dashboard-container {
+  height: 100vh;
+  width: calc(100vw - 200px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background: red; */
+}
+
+#dashboard-container .task-container {
+  flex: 1;
+  height: 100%;
+  /* background-color: #0056b3; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#taskList {
+  height: 40vh;
+  width: 60vw;
+  background-color: white;
+  border-radius: 9px;
+  list-style: none;
+  padding: 0;
+}
+
+#dashboard-container .form-container {
+  background-color: white;
+  width: 60vw;
+  height: 200px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#taskList li {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#taskForm{
+  height: 100%;
+  width: 200px;
+  border: 1px solid rgba(90, 90, 90, 0.5);
+  border-radius: 5px;
+  /* padding: 2rem; */
+}
+
+#taskForm input button{
+  width: 90%;
+}
+
+.task-text {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.task-actions button {
+  margin-left: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+/*  employee sidebar ------------------------------------------------------------------------------------------------------------------------------
+
+
+*/
+#dashboard-container .employe-list-container {
+  /* background: red; */
+  height: 100vh;
+  width: 200px;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+#dashboard-container .employe-list-container .header {
+  /* background: red; */
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.33); */
+}
+#dashboard-container .employe-list-container .footer {
+  /* background: red; */
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.33); */
+}
+
+#dashboard-container .employe-list {
+  flex: 1;
+  width: 100%;
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.employee-card {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.33); */
+}
+
+.employee-card .image-container {
+  width: 30%;
+}
+.employee-card .content-container {
+  width: 60%;
+}
+
+.employee-card img {
+  width: 40px;
+}
+
+/*  media query-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 1080px) {
+  #dashboard-container .employe-list-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    overflow: auto;
+    width: 60px;
+    height: auto;
+    position: relative;
+    border-right: 1px rgba(0, 0, 0, 0.5);
   }
-  
+
+  #dashboard-container .employe-list-container {
+    display: none;
+  }
+
   .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
+    float: left;
   }
-   
-  .sidebar a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
-  .sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-  }
-  
   div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
+    margin-left: 0;
   }
-  
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-      border-right: 1px rgba(0,0,0,0.5);
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
-  
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  }
+}
